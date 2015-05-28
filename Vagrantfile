@@ -9,9 +9,10 @@ Vagrant.configure(2) do |config|
   # Let's call the host something contextual
   config.vm.hostname = "tidepool-vm"
 
-  # Port forwards
+  # Port forwards for Blip, Shoreline and Chrome Uploader
   config.vm.network "forwarded_port", guest: 3000, host: 3000
   config.vm.network "forwarded_port", guest: 8009, host: 8009
+  config.vm.network "forwarded_port", guest: 9122, host: 9122
   config.vm.network "forwarded_port", guest: 3004, host: 3004
 
   # Let's make the VM accessible via a static local IP too
