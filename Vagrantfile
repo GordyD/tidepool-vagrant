@@ -9,14 +9,13 @@ Vagrant.configure(2) do |config|
   # Let's call the host something contextual
   config.vm.hostname = "tidepool-vm"
 
-  # Port forward localhost:8080 to vm:80 (HTTP)
-  config.vm.network "forwarded_port", guest: 80, host: 8080
-  # Port forward localhost:8443 to vm:443 (HTTPS)
-  config.vm.network "forwarded_port", guest: 443, host: 8443
+  # Port forwards
+  config.vm.network "forwarded_port", guest: 3000, host: 3000
+  config.vm.network "forwarded_port", guest: 8009, host: 8009
+  config.vm.network "forwarded_port", guest: 3004, host: 3004
 
-  # Create a private network, which allows host-only access to the machine
-  # using a specific IP.
-  # config.vm.network "private_network", ip: "192.168.33.10"
+  # Let's make the VM accessible via a static local IP too
+  config.vm.network "private_network", ip: "192.168.33.100"
 
   # Share the tidepool parent directory and mount it in the VMs file system
   config.vm.synced_folder "../", "/tidepool"
