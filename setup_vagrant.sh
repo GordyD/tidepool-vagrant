@@ -27,6 +27,10 @@ wget -qO- https://storage.googleapis.com/golang/go1.4.2.linux-amd64.tar.gz | tar
 # Set PATH variable for Go
 echo "export PATH=\$PATH:/usr/local/go/bin" > /etc/profile.d/golang.sh
 
+# Reload bash profile so that go is present on PATH
+source ~/.profile
+source /etc/profile
+
 echo "Installing bzr..."
 apt-get install -y bzr
 
