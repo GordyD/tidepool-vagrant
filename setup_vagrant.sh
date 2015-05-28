@@ -1,5 +1,8 @@
 #!/bin/bash
 
+echo "Installing htop..."
+apt-get install -y htop
+
 echo "Installing node.js..."
 wget -qO- http://nodejs.org/dist/v0.12.1/node-v0.12.1-linux-x64.tar.gz  | tar -C /usr/local --strip-components 1 -xzv
 
