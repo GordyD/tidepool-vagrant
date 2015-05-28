@@ -6,6 +6,9 @@ Vagrant.configure(2) do |config|
   # The base vagrant box to use for this VM. We are going to use Ubuntu 14.04
   config.vm.box = "puphpet/ubuntu1404-x64"
 
+  # Let's call the host something contextual
+  config.vm.hostname = "tidepool-vm"
+
   # Port forward localhost:8080 to vm:80 (HTTP)
   config.vm.network "forwarded_port", guest: 80, host: 8080
   # Port forward localhost:8443 to vm:443 (HTTPS)
